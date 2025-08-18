@@ -1,0 +1,18 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/images/joshua-bartell-6vvIBTvL90A-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+img {
+  max-width: 30%;
+  height: auto;
+}
