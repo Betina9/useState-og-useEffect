@@ -6,10 +6,18 @@ function App() {
 
   return (
     <>
-      <img src="./public/cookie.png" alt="A cookie with chocolate" />
+      <img src="./images/cookie.png" alt="A cookie with chocolate" />
       <p className="read-the-docs">
-        Click on the cookie to increase the counter!
+        Click on the button to increase the number of cookies!
       </p>
+      <button onClick={() => setCount(count + 1)}>
+        You have {count} cookie{count !== 1 ? "s" : ""}!
+        <img
+          src="./images/cookie.png"
+          alt="A cookie"
+          style={{ width: "20px", height: "20px" }}
+        />
+      </button>
     </>
   );
 }
