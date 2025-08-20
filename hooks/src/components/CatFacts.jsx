@@ -1,39 +1,37 @@
-import { use } from "react";
+import { useEffect, useState } from "react";
 
 function CatFacts() {
-  const [facts, setFacts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const [facts, setFacts] = useState([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
 
 useEffect(() => {
-    fetch("https://catfact.ninja/fact")
-    .then((data) => {
-        setFacts(data.data);
-        setLoading(false);
-        .catch((err) => {
-            setError(err.message);
-            setLoading(false);
-            if (loading) return <p>Loading cat facts</p>;
-            if (error) return <p>Error: {error}</p>
-            <ul>
-                {facts.map((fact, index) => (
-                    <li key={index}>{fact.fact}</li>
-                ))}
-            </ul>
-        });
-    })
+  fetch("https://catfact.ninja/fact")
+  .then((response) => response.json())
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+})
+.then((data) => {
+  setFacts(data.fact);
+  setLoading(false);
+})
+.catch((error) => {   
+  setError(error);
+  setLoading(false);
+});
+}, []);
 
+if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <button onClick={onClick}>
-      Click for cat facts!
-      <img
-        src="./images/litenpote.png"
-        alt="A cookie"
-        style={{ width: "20px", height: "20px" }}
-      />
-    </button>
-  );
+  <div>
+    <h1>{facts}</h1>
+  </div>
+);
 }
 
 export default CatFacts;
