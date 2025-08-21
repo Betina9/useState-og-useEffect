@@ -38,7 +38,9 @@ function CatFacts() {
       {error && <p>Feil: {error.message}</p>}
       {!loading && !error && <h1>{facts}</h1>}
 
-      <button onClick={() => fetchFact()}>Get a new cat fact 🐱</button>
+      <button className="catButton" onClick={() => fetchFact()}>
+        Get a new cat fact 🐱
+      </button>
     </div>
   );
 }
