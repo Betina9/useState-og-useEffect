@@ -32,31 +32,38 @@ function UserList() {
       </ul>
 
       <h3>Legg til ny bruker</h3>
-      <label>
-        Username:
-        <input
-          type="text"
-          placeholder="Ola Nordmann"
-          className="input"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addUser();
+        }}
+      >
+        <label>
+          Username:
+          <input
+            type="text"
+            placeholder="Ola Nordmann"
+            className="input"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
 
-      <label>
-        Email:
-        <input
-          type="email"
-          placeholder="ola@norge.no"
-          className="input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            placeholder="ola@norge.no"
+            className="input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
 
-      <button onClick={addUser} className="ListButton">
-        Push
-      </button>
+        <button type="submit" className="ListButton">
+          Push
+        </button>
+      </form>
     </div>
   );
 }
