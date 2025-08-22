@@ -1,9 +1,13 @@
 .catButton {
-  background-color: #4caf50; /* Grønn bakgrunn */
-  color: white; /* Hvit tekst */
-  padding: 10px 20px; /* Polstring */
-  border: none; /* Ingen kant */
-  border-radius: 5px; /* Rundede hjørner */
-  cursor: pointer; /* Endrer musepekeren til en hånd */
-  font-size: 16px; /* Større skrift */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.catButton:hover {
+  background-color: #45a049;
 }

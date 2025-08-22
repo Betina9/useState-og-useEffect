@@ -23,7 +23,7 @@ function UserList() {
   return (
     <div className="userlist">
       <h2>Brukerliste</h2>
-      <ul>
+      <ul className="list">
         {users.map((user) => (
           <li key={user.email}>
             {user.username} – {user.email}
